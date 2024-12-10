@@ -1,0 +1,55 @@
+/* mobile.css */
+
+/* عندما يكون العرض أقل من 768px (أي الموبايل) */
+@media (max-width: 767px) {
+    /* ضبط النصوص لتكون بحجم مناسب */
+    body {
+        font-size: 16px;
+    }
+
+    /* جعل الأزرار أكبر من أجل السهولة في الاستخدام */
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    /* تغيير ترتيب المحتوى أو ضبط أبعاد العناصر */
+    .container {
+        padding: 10px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form input, form button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+.hello-page {
+    width: 100%;
+    height: 100vh; /* تأخذ كامل ارتفاع الشاشة */
+    display: flex;
+    justify-content: center; /* لمركزة المحتوى أفقيًا */
+    align-items: center; /* لمركزة المحتوى عموديًا */
+    text-align: center; /* لضبط النصوص بشكل صحيح */
+}
+
+/* لجعل النص داخل الصفحة أكثر وضوحًا */
+.hello-page h1 {
+    font-size: 3rem;
+    color: #333;
+}
