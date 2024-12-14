@@ -21,11 +21,9 @@ function validateEmail(email) {
 
 // Function for registering new users
 function UsersObj() {
-  // استرجاع المستخدمين من Local Storage
   let storedUsers = JSON.parse(localStorage.getItem("u")) || [];
   Users = storedUsers;
 
-  // التحقق من صحة البريد الإلكتروني
   if (!validateEmail(emailInput.value)) {
     Swal.fire({
       icon: "error",
@@ -35,7 +33,6 @@ function UsersObj() {
     return;
   }
 
-  // التحقق من كلمة المرور وتأكيدها
   if (passwordInput.value !== confirmPasswordInput.value) {
     Swal.fire({
       icon: "error",
@@ -45,7 +42,6 @@ function UsersObj() {
     return;
   }
 
-  // التحقق من وجود البريد الإلكتروني مسبقًا
   let existingUser = Users.find(user => user.email === emailInput.value);
   if (existingUser) {
     Swal.fire({
@@ -56,14 +52,12 @@ function UsersObj() {
     return;
   }
 
-  // إنشاء المستخدم الجديد
   let eUsers = {
     userName: userNameInput.value,
     email: emailInput.value,
     password: passwordInput.value,
   };
 
-  // إضافة المستخدم وتخزينه
   Users.push(eUsers);
   localStorage.setItem("u", JSON.stringify(Users));
   localStorage.setItem("currentUser", eUsers.userName);
